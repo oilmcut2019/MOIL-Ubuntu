@@ -14,6 +14,6 @@ RUN apt-get update \
 	bash-completion \
 	tree \
 	curl \
-	wget \
+	wget 
 
-CMD ["/bin/bash"]
+CMD [ "/bin/bash" ]
