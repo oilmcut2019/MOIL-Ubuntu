@@ -6,8 +6,11 @@ MAINTAINER anto "m07158031@o365.mcut.edu.tw"
 USER root
 WORKDIR /root
 
-RUN apt-get update 
-RUN apt-get install -y nano git make sudo tree curl wget 
-RUN apt-get install -y python3-pip python3-dev 
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
 
 CMD [ "/bin/bash" ]
