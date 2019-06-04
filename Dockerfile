@@ -7,7 +7,10 @@ USER root
 WORKDIR /root
 
 RUN apt-get update 
-RUN apt-get install -y nano git make sudo tree curl wget 
-
+RUN apt-get install -y nano git make sudo tree curl wget \
+	&& python3-pip python3-dev \
+  	&& cd /usr/local/bin \
+ 	&& ln -s /usr/bin/python3 python \
+	&& pip3 install --upgrade pip
 
 CMD [ "/bin/bash" ]
