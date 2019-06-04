@@ -9,4 +9,5 @@ WORKDIR /root
 RUN apt-get update 
 RUN apt-get install -y nano git make sudo tree curl wget 
 
-CMD ["/bin/bash"]
+
+CMD [ "/bin/bash" ]
